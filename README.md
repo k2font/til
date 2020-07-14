@@ -1,6 +1,8 @@
 # TIL
 > Today I Learned.
 
+日々学んだ技術をラフに記録するリポジトリです。
+
 # Table of Contents
 ## Programming Language
 #### C++
