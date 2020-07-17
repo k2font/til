@@ -12,16 +12,20 @@
 - [変数と定数・データ型](https://github.com/k2font/til/blob/master/Rust/Variables/variables.md)
 #### TypeScript
 - 
+#### React
+- [クラスコンポーネントと関数コンポーネントの違い](React/class-component-vs-function-component.md)
 
 ## Web Application
 #### WebBrowser
 - 
 #### Lighthouse
--
+- [Lighthouseとは](/Lighthouse/whats-lighthouse.md)
 #### ProgressiveWebApps
 - 
 #### Gatsby.js
-- 
+- [Gatsby.jsにカスタム404ページを追加する](Gatsby.js/add-404-page.md)
+- [gatsby-personal-starter-blogテンプレートを使ってNetlify CMS搭載のブログを簡単に作る](Gatsby.js/gatsby-personal-starter-blog.md)
+- [Gatsby.jsとTypeScriptを連携する](Gatsby.js/typescript-with-gatsby.md)
 #### GraphQL
 - 
 
@@ -30,6 +34,8 @@
 - 
 #### Kubernetes
 - 
+#### Netlify
+- [netlifyのStatus BudgeをREADME.mdにつける](netlify/status-badge.md)
 
 ## Database
 #### SQL(Language)
@@ -43,7 +49,9 @@
 
 ## Others
 #### Algorithm
-- [幅優先探索]()
+- [幅優先探索](/Algorithm/bfs.md)
 
 #### VSCode
-- [GitとVSCodeの連携](https://github.com/k2font/til/blob/master/VSCode/vscode_git.md)
+- [GitとVSCodeの連携](/VSCode/vscode_git.md)
+- [デバッグ機能の使い方](/VSCode/debug.md)
+- [マルチカーソルの使用方法](/VSCode/multi-cursor.md)
