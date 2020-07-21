@@ -15,3 +15,4 @@
 
 <img width="1051" alt="スクリーンショット 2020-07-20 9 48 11" src="https://user-images.githubusercontent.com/6561417/87889833-87190a80-ca6e-11ea-8fe5-bad34f77fdd6.png">
 
+- あとはローカルのディレクトリ下での開発と同じように開発できる。Happy Hacking!

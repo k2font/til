@@ -1,4 +1,4 @@
-# Progressive Web App (PWA)
+# Progressive Web App (PWA)とはなにか?
 ### 概要
 - https://web.dev/what-are-pwas/
 - ネイティブアプリ化できるWebアプリケーション、というざっくりとした理解で問題ない

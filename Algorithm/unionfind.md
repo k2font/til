@@ -58,9 +58,9 @@ int main() {
 
   REP(i, Q) {
     if(P[i] == 0) {
-      uf.merge(A[i], B[i]); // グラフの結合はuniteで簡単
+      uf.merge(A[i], B[i]); // グラフの結合はmergeで簡単
     } else {
-      if(uf.issame(A[i], B[i])) cout << "Yes" << endl; // AとBが同じグラフにいるかどうかはsameで簡単
+      if(uf.issame(A[i], B[i])) cout << "Yes" << endl; // AとBが同じグラフにいるかどうかはissameで簡単
       else cout << "No" << endl;
     }
   }
