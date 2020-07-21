@@ -21,7 +21,7 @@
 #### Lighthouse
 - [Lighthouseとは](/Lighthouse/whats-lighthouse.md)
 #### ProgressiveWebApps
-- 
+- [Progressive Web App (PWA)とはなにか?](/ProgressiveWebApps/whatspwa.md)
 #### Gatsby.js
 - [Gatsby.jsにカスタム404ページを追加する](Gatsby.js/add-404-page.md)
 - [gatsby-personal-starter-blogテンプレートを使ってNetlify CMS搭載のブログを簡単に作る](Gatsby.js/gatsby-personal-starter-blog.md)
@@ -38,6 +38,8 @@
 - [netlifyのStatus BudgeをREADME.mdにつける](netlify/status-badge.md)
 #### AWS
 - 
+#### Vagrant
+- [VagrantでホストしたVMにSSHで接続する](/Vagrant/connect-ssh.md)
 
 ## Database
 #### SQL(Language)
@@ -54,8 +56,13 @@
 ## Others
 #### Algorithm
 - [幅優先探索](/Algorithm/bfs.md)
+- [深さ優先探索](/Algorithm/dfs.md)
+- [Union Find](/Algorithm/unionfind.md)
+- [クラスカル法](/Algorithm/Kruskal.md)
 
 #### VSCode
 - [GitとVSCodeの連携](/VSCode/vscode_git.md)
 - [デバッグ機能の使い方](/VSCode/debug.md)
 - [マルチカーソルの使用方法](/VSCode/multi-cursor.md)
+- [スニペットを作成する](/VSCode/make-snippet.md)
+- [リモート開発機能](/VSCode/remote-development.md)
