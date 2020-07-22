@@ -9,7 +9,6 @@
     "sourceMap": true, // ソースマップを出力する
     // ※ソースマップ: JavaScriptとTypeScriptを結びつけておく定義ファイル。
     // JavaScriptを実行しながらTypeScriptをデバッグすることができるようになる
-
     "outDir": "./out", // コンパイル後のJavaScriptファイルの出力先を指定する
     "strict": true, // すべてのコードで型定義を強制する
     "baseUrl": "./", // TypeScriptの絶対参照時のベースパス
