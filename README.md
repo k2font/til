@@ -10,14 +10,14 @@
 - 
 ### Rust <img src="https://img.icons8.com/android/24/000000/crab.png" width="20" height="20" />
 - [変数と定数・データ型](https://github.com/k2font/til/blob/master/Rust/Variables/variables.md)
-### JavaScript <img src="https://img.icons8.com/ios-glyphs/30/000000/javascript.png" width="20" height="20" />
+### JavaScript <img src="https://img.icons8.com/color/48/000000/javascript.png" width="20" height="20" />
 - [Arrow Function(アロー関数)](/JavaScript/arrow-function.md)
 - [filter関数内のアロー関数の仕様について ](/JavaScript/filter-arrow-function.md)
 - [分割代入](/JavaScript/destructuring-assignment.md)
 - [スプレッド構文](/JavaScript/spread.md)
 - [テンプレートリテラル](/JavaScript/template-literals.md)
 - [this](/JavaScript/this-usage.md)
-### TypeScript <img src="https://img.icons8.com/material-sharp/24/000000/typescript.png" width="20" height="20" />
+### TypeScript <img src="https://img.icons8.com/color/48/000000/typescript.png" width="20" height="20" />
 - [よく使うtsconfig.jsonの設定](TypeScript/tsconfig-summary.md)
 ### React <img src="https://img.icons8.com/ios-glyphs/100/000000/react.png" width="20" height="20" />
 - [クラスコンポーネントと関数コンポーネントの違い](React/class-component-vs-function-component.md)
