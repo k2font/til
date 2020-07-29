@@ -46,21 +46,25 @@
 - [styled-componentsの使い方(基礎)](CSS/styled-components/how-to-use-styled-components-basics.md)
 
 ## Server(Cloud)
-### Docker
+### Docker <img src="https://img.icons8.com/material/24/000000/docker.png" width="20" height="20" />
 - 
-### Kubernetes
+### Kubernetes <img src="https://img.icons8.com/windows/32/000000/kubernetes.png" width="20" height="20" />
+- 
+### Firebase <img src="https://img.icons8.com/color/48/000000/firebase.png" width="20" height="20" />
 - 
 ### Netlify
 - [netlifyのStatus BudgeをREADME.mdにつける](netlify/status-badge.md)
-### AWS
+### AWS <img src="https://img.icons8.com/material/48/000000/amazon-web-services.png" width="20" height="20" />
 - 
-### Vagrant
+### Vagrant 
 - [VagrantでホストしたVMにSSHで接続する](/Vagrant/connect-ssh.md)
 
 ## Database
 ### SQL(Language)
 - 
-### MySQL
+### MySQL <img src="https://img.icons8.com/ios-filled/50/000000/mysql-logo.png" width="20" height="20" />
+- 
+### MongoDB <img src="https://img.icons8.com/color/48/000000/mongodb.png" width="20" height="20" />
 - 
 
 ## Network
@@ -70,13 +74,19 @@
 ## Security
 
 ## Others
+### Git <img src="https://img.icons8.com/ios-filled/50/000000/git.png" width="20" height="20" />
+- [コミットメッセージにおけるPrefix](Git/prefix.md)
+- [絵文字を用いたコミットメッセージのPrefix](Git/commit-message-emoji-prefix.md)
+
 ### Algorithm
 - [幅優先探索](/Algorithm/bfs.md)
 - [深さ優先探索](/Algorithm/dfs.md)
 - [Union Find](/Algorithm/unionfind.md)
 - [クラスカル法](/Algorithm/Kruskal.md)
+- [2つの変数の値を交換する(3変数を用意する方法)](Algorithm/swap.md)
+- [一時変数を用意せずに、2つの変数の値を交換する](Algorithm/xor-swap.md)
 
-### VSCode
+### VSCode <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" width="20" height="20" />
 - [GitとVSCodeの連携](/VSCode/vscode_git.md)
 - [デバッグ機能の使い方](/VSCode/debug.md)
 - [マルチカーソルの使用方法](/VSCode/multi-cursor.md)
