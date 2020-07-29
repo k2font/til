@@ -1,4 +1,4 @@
-# Prefix
+# コミットメッセージにおけるPrefix
 - コミットメッセージの先頭に付与するPrefixのよくある例をまとめる。
 - Prefixをつけるとつけないとでは開発効率に差が出る
 - 参考: https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type
