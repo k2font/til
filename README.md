@@ -11,13 +11,22 @@
 ### Rust <img src="https://img.icons8.com/android/24/000000/crab.png" width="20" height="20" />
 - [変数と定数・データ型](https://github.com/k2font/til/blob/master/Rust/Variables/variables.md)
 ### JavaScript <img src="https://img.icons8.com/ios-glyphs/30/000000/javascript.png" width="20" height="20" />
-- 
+- [Arrow Function(アロー関数)](/JavaScript/arrow-function.md)
+- [filter関数内のアロー関数の仕様について ](/JavaScript/filter-arrow-function.md)
+- [分割代入](/JavaScript/destructuring-assignment.md)
+- [スプレッド構文](/JavaScript/spread.md)
+- [テンプレートリテラル](/JavaScript/template-literals.md)
+- [this](/JavaScript/this-usage.md)
 ### TypeScript <img src="https://img.icons8.com/material-sharp/24/000000/typescript.png" width="20" height="20" />
-- 
+- [よく使うtsconfig.jsonの設定](TypeScript/tsconfig-summary.md)
 ### React <img src="https://img.icons8.com/ios-glyphs/100/000000/react.png" width="20" height="20" />
 - [クラスコンポーネントと関数コンポーネントの違い](React/class-component-vs-function-component.md)
+- [条件付きレンダリング](/React/conditional-rendering.md)
+- [Context API](React/context-api.md)
+- [`state`とライフサイクル](React/state-and-lifecycle.md)
+- [ユーザ定義のコンポーネント名は大文字で始める](React/user-defined-components-must-be-capitalized.md)
 ### CSS <img src="https://img.icons8.com/material/24/000000/css3.png" width="20" height="20" />
-- 
+- [長さの単位](/CSS/css-length.md)
 
 ## Web Application
 ### WebBrowser
@@ -30,8 +39,11 @@
 - [Gatsby.jsにカスタム404ページを追加する](Gatsby.js/add-404-page.md)
 - [gatsby-personal-starter-blogテンプレートを使ってNetlify CMS搭載のブログを簡単に作る](Gatsby.js/gatsby-personal-starter-blog.md)
 - [Gatsby.jsとTypeScriptを連携する](Gatsby.js/typescript-with-gatsby.md)
-### GraphQL
+### GraphQL <img src="https://user-images.githubusercontent.com/6561417/88748753-c93bfd80-d18c-11ea-92d8-e4c90c2362b7.png" width="20" height="20" />
 - 
+### styled-components 
+- [styled-componentsとは?](CSS/styled-components/whats-styled-components.md)
+- [styled-componentsの使い方(基礎)](CSS/styled-components/how-to-use-styled-components-basics.md)
 
 ## Server(Cloud)
 ### Docker
