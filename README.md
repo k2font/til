@@ -8,6 +8,8 @@
 ## Programming Language
 ### C++ <img src="https://img.icons8.com/ios-filled/50/000000/c-plus-plus-logo.png" width="20" height="20" />
 - 
+### Go <img src="https://img.icons8.com/color/48/000000/golang.png" width="20" height="20" />
+- 
 ### Rust <img src="https://img.icons8.com/android/24/000000/crab.png" width="20" height="20" />
 - [変数と定数・データ型](https://github.com/k2font/til/blob/master/Rust/Variables/variables.md)
 ### JavaScript <img src="https://img.icons8.com/color/48/000000/javascript.png" width="20" height="20" />
@@ -44,6 +46,8 @@
 ### styled-components 
 - [styled-componentsとは?](CSS/styled-components/whats-styled-components.md)
 - [styled-componentsの使い方(基礎)](CSS/styled-components/how-to-use-styled-components-basics.md)
+### npm <img src="https://img.icons8.com/color/48/000000/npm.png" width="20" height="20" />
+- [package.jsonのバージョンの^と~の表記](/npm/version-caret-tilda.md)
 
 ## Server(Cloud)
 ### Docker <img src="https://img.icons8.com/material/24/000000/docker.png" width="20" height="20" />
@@ -55,6 +59,8 @@
 ### Netlify
 - [netlifyのStatus BudgeをREADME.mdにつける](netlify/status-badge.md)
 ### AWS <img src="https://img.icons8.com/material/48/000000/amazon-web-services.png" width="20" height="20" />
+- 
+### GCP <img src="https://img.icons8.com/ios-filled/24/000000/google-cloud-platform.png" width="20" height="20" />
 - 
 ### Vagrant 
 - [VagrantでホストしたVMにSSHで接続する](/Vagrant/connect-ssh.md)
