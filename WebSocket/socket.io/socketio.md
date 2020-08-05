@@ -1,9 +1,40 @@
 # socket.io
 ### 概要
-- WebSocketがJavaScript/Node.jsで簡単に利用できるライブラリ
+- [WebSocket](/WebSocket/whats-websocket.md)がJavaScript/Node.jsで簡単に利用できるライブラリ
 - サーバーサイド専用のsocket.ioとクライアントサイド専用のsocket.io-clientがある
   - https://github.com/socketio/socket.io
   - https://github.com/socketio/socket.io-client
+- クライアントからサーバへWebSocket接続が可能か試み、出来ないようであればHTTPロングポーリングに変更する賢いライブラリ。
+
+- socket.ioを使うと、クライアントサイドにおける以下の生WebSocketコードが...
+
+```javascript
+let WebSocket = require('ws);
+const socket = new WebSocket('wss://...');
+
+socket.onopen(() => {
+  socket.send('hello!!!!');
+});
+
+socket.onmessage((data) => {
+  console.log(data);
+});
+```
+
+以下のように読みやすくになる。  
+(※要CDNによるsocket.io読み込み `<script src="/socket.io/socket.io.js"></script>`)
+
+```javascript
+const socket = io("wss://...");
+
+socket.on('connect', () => {
+  socket.send('hello!!!!');
+});
+
+socket.on('message', (data) => {
+  console.log(data);
+});
+```
 
 ### 導入方法
 ```shell
