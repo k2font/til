@@ -131,3 +131,6 @@ http.listen(3000, () => {
 - `socket.on('<event message>', _callback)`でイベントのリッスン。
   - イベントメッセージに応じてクライアントアプリケーションの挙動を変化させている。
   - 上記サンプルだと、たとえば`chat message`を受信すると他ユーザからの発話を表示する
+
+### 注意点
+- socket.ioは純粋なWebSocketではないため、socket.io <-> WebSocketのような通信を行うことが出来ない。クライアントがsocket.io製であるならば、サーバもsocket.io製でなくてはいけない。
