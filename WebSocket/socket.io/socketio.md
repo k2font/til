@@ -9,8 +9,8 @@
 - socket.ioを使うと、クライアントサイドにおける以下の生WebSocketコードが...
 
 ```javascript
-let WebSocket = require('ws);
-const socket = new WebSocket('wss://...');
+let WebSocket = require('ws');
+const socket = new WebSocket('wss://...'); // WebSocket接続を試みる
 
 socket.onopen(() => {
   socket.send('hello!!!!');
@@ -35,6 +35,8 @@ socket.on('message', (data) => {
   console.log(data);
 });
 ```
+
+- WebSocket接続を試みる手順は[こちら](/WebSocket/whats-websocket.md)を参照
 
 ### 導入方法
 ```shell
