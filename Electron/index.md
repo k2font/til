@@ -24,7 +24,7 @@ $ npm init
   - つまり、この部分を弄ると起点となるコードを変更できる。
   - プロジェクトの都合に合わせて適宜書き換えよう。
 
-```json
+```jsonc
 {
   "name": "electron-hello-world",
   "version": "1.0.0",
