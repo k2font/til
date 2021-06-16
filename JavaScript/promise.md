@@ -85,4 +85,10 @@ dummyFetch("/failure/data").then(onFulfilled, onReject);
 - つまり、発行したPromiseはPromise内で`resolve`か`reject`を呼び出せば、あとは`then`が処理してくれる。
   - `try .. catch`を使わなくても、Promiseが実行したメソッドに応じて自動的にエラーハンドリングを行ってくれる。最高！
 
-
+### Promiseの状態(Fulfilled, Rejected, Pending)
+- Promiseインスタンスは、内部的に次の3つの状態が存在する。
+  - Fulfilled: `resolve`した状態。この場合、thenの第一引数が呼ばれる。
+  - Rejected: `reject`した状態。この場合、thenの第二引数かcatchが呼ばれる。
+  - Pending: FulfilledでもRejectedでもない状態。これは`resolve`も`reject`もしていないので、どちらの状態になるか決めかねている。
+- 基本、FilfilledかRejectedの状態になれば、以降Promiseの状態は変化することはない。また、APIで操作できるものでもないため、むりやりいじることも不可能。
+  - つまり、Pending→Fulfilledとなるか、Pending→Rejectedとなるかの2択しかない。Fulfilled→Pendingにもならないし、Rejected→Fulfilledとなることもできない。
