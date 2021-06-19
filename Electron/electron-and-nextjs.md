@@ -62,3 +62,11 @@ export default IndexPage
 ```
 
 - そのまま保存すると、自動的にページが更新される。Next.jsの便利機能。
+
+## アプリケーションのパッケージング
+```
+$ npm run dist
+```
+
+- `electron-builder` が起動して、ビルドが始まる
+- ビルドされたアプリケーションの名前は、 `package.json` の `productName` に記載された名前が指定される。
