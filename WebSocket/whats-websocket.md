@@ -57,6 +57,8 @@ socket.onerror = (error) => {
   1. HTTPリクエストを送信
   2. HTTPレスポンスを受領
   3. WebSocketプロトコルに切り替え相互接続
+- これをOpening Handshakeと呼ぶ
+  - https://triple-underscore.github.io/RFC6455-ja.html#section-1.3
 
 - 1のリクエストは以下の通り。
 - `Connection: Upgrade`は「プロトコルを変更するけど大丈夫？」をサーバに伝えることを指している
@@ -78,3 +80,4 @@ Upgrade: websocket
 Connection: Upgrade
 Sec-WebSocket-Accept: hsBlbuDTkk24srzEOTBUlZAlC2g=
 ```
+- このレスポンスを受け取った後に、WebSocket接続が開始される。
