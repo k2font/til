@@ -45,32 +45,44 @@ $ yarn add socket.io
 
 ### Hello World
 #### サーバーサイド
-- フレームワークとしてExpress.jsを用いる
-```javascript
-var app = require('express')();
-var http = require('http').createServer(app);
-var io = require('socket.io')(http);
+- フレームワークとしてExpress.jsを用い、TypeScriptで書いた
+```typescript
+import express from "express";
+import type { Request, Response } from "express";
+import cookieParser from "cookie-parser";
+import logger from "morgan";
+import http from "http";
+import { Server } from "socket.io";
+import type { Socket } from "socket.io";
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+const app = express();
+const server = http.createServer(app);
+
+const io = new Server(server);
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.get("/", (req: Request, res: Response) => {
+  res.sendFile(__dirname + "/index.html");
 });
 
-io.on('connection', (socket) => {
-  io.emit('login message', "user is in." + Date());
+io.on("connection", (socket: Socket) => {
+  console.log("a user connected!");
 
-  console.log('a user connected.');
-
-  socket.on('disconnect', () => {
-    io.emit('logout message', "user is disconnected!");
+  socket.on("chat message", (message: string) => {
+    console.log("message: " + message);
   });
 
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
-  });
+  socket.on("disconnect", () => {
+    console.log("user disconnected!");
+  })
 });
 
-http.listen(3000, () => {
-  console.log('listening on *:3000');
+server.listen(3000, () => {
+  console.log("listening on 3000");
 });
 ```
 
@@ -81,52 +93,45 @@ http.listen(3000, () => {
 
 #### クライアントサイド
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Socket.IO chat</title>
     <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; }
-      form button { width: 9%; background: rgb(108, 197, 226); border: none; padding: 10px; }
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+      #input:focus { outline: none; }
+      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
       #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
+      #messages > li { padding: 0.5rem 1rem; }
+      #messages > li:nth-child(odd) { background: #efefef; }
     </style>
   </head>
   <body>
     <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
     </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      const form = document.getElementById("form");
+      const input = document.getElementById("input");
+
+      form.addEventListener("submit", (err) => {
+        err.preventDefault();
+        if(input.value) {
+          socket.emit("chat message", input.value);
+          input.value = "";
+        }
+      });
+    </script>
   </body>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script>
-    $(function() {
-      var socket = io();
-      $('form').submit(function(e) {
-        e.preventDefault();
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
-      socket.on('chat message', function(msg) {
-        console.log("chat message");
-        $('#messages').append($('<li>').text(msg));
-      });
-      socket.on('login message', function(msg) {
-        console.log("login message");
-        $('#messages').append($('<li>').text(msg));
-      });
-      socket.on('logout message', function(msg) {
-        console.log("logout message");
-        $('#messages').append($('<li>').text(msg));
-      });
-    });
-  </script>
 </html>
 ```
 
