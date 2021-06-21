@@ -1,5 +1,5 @@
 # socket.io
-### 概要
+## 概要
 - [WebSocket](/WebSocket/whats-websocket.md)がJavaScript/Node.jsで簡単に利用できるライブラリ
 - サーバーサイド専用のsocket.ioとクライアントサイド専用のsocket.io-clientがある
   - https://github.com/socketio/socket.io
@@ -141,3 +141,112 @@ server.listen(3000, () => {
 
 ### 注意点
 - socket.ioは純粋なWebSocketではないため、socket.io <-> WebSocketのような通信を行うことが出来ない。クライアントがsocket.io製であるならば、サーバもsocket.io製でなくてはいけない。
+
+## サーバからすべてのクライアントにメッセージを配信する
+- クライアントからメッセージを受け取ったサーバは、受け取ったメッセージをすべての他のクライアントに配信する。
+- `io.emit()` を使うと良い。
+
+#### サーバサイド
+
+```typescript
+import express from "express";
+import type { Request, Response } from "express";
+import cookieParser from "cookie-parser";
+import logger from "morgan";
+import http from "http";
+import { Server } from "socket.io";
+import type { Socket } from "socket.io";
+
+const app = express();
+const server = http.createServer(app);
+
+const io = new Server(server);
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.get("/", (req: Request, res: Response) => {
+  res.sendFile(__dirname + "/index.html");
+});
+
+io.on("connection", (socket: Socket) => {
+  console.log("a user connected!");
+
+  socket.on("chat message", (message: string) => {
+    console.log("message: " + message);
+  });
+
+  // 追加箇所
+  // イベントメッセージ「chat message」を受け取ると、受け取ったメッセージをすべてのユーザに配信する
+  socket.on("chat message", (message: string) => {
+    io.emit("chat message", message);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("user disconnected!");
+  });
+});
+
+server.listen(3000, () => {
+  console.log("listening on 3000");
+});
+```
+
+#### クライアントサイド
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+      #input:focus { outline: none; }
+      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages > li { padding: 0.5rem 1rem; }
+      #messages > li:nth-child(odd) { background: #efefef; }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      const messages = document.getElementById("messages");
+      const form = document.getElementById("form");
+      const input = document.getElementById("input");
+
+      form.addEventListener("submit", (err) => {
+        err.preventDefault();
+        if(input.value) {
+          socket.emit("chat message", input.value);
+          input.value = "";
+        }
+      });
+
+      socket.on("chat message", (message) => {
+        let item = document.createElement("li");
+        item.textContent = message;
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+    </script>
+  </body>
+</html>
+```
+
+# 参考
+- https://socket.io/get-started/chat
+- バージョンによってドキュメントがコロコロ変わるので、バージョニングしてほしい
