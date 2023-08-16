@@ -111,3 +111,33 @@ app.whenReady().then(() => {
 
 ### アプリケーションを実行する
 - `$ npm start` を実行することで、htmlファイルをレンダリングできる。
+
+## ウインドウのライフサイクルを管理する
+- たとえばWindowsはウインドウをすべて落とすとアプリケーションが終了する
+- macOSはウインドウをすべて落としてもアプリケーションは起動したまま
+- Electronではこの状態を管理できる
+- `process.platform` を使って実行しているOSを判別する
+
+### Windows & Linux
+- `darwin`(macOS)ではない場合、すべてのウインドウがクローズしたイベントを検知したらアプリケーションを落とす
+
+```js
+app.on("window-all-closed", () => {
+  if(process.platform !== "darwin") app.quit();
+});
+```
+
+### macOS
+- macOSはウインドウがすべて落ちてもアプリケーションを落とさない
+- これを実装するには、 `app` モジュールの `activate` イベントをリッスンする
+
+```js
+app.whenReady().then(() => {
+  createWindow();
+
+  app.on("activate", () => {
+    if(BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+});
+```
+

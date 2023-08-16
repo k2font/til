@@ -1,0 +1,1 @@
+# TypeScriptとは何か
