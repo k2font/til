@@ -1,6 +1,6 @@
 # Hooksについて
 ## はじめに
-- この記事はReact公式ドキュメントのリファレンスを読んで理解した内容を記載する
+- React公式ドキュメントのリファレンスを読んで理解した内容を記載する
 
 ## Hooksの種類
 ### State Hooks
@@ -62,3 +62,11 @@ function Button() {
   - しかし、多層のコンポーネントをまたいでデータを渡すと、propsを受け渡すコンポーネントが増えてしまう
   - Contextを用いると、この問題が解決できる
 
+### Ref Hooks
+- DOMノードやタイムアウトID等の情報を保持するのに便利なHooks
+- (利用イメージが良くわからない)
+  - Reactのエスケープハッチとして使われる模様
+- あとで読む: https://react.dev/learn/referencing-values-with-refs
+
+### Effect Hooks
+- 
